@@ -1,0 +1,9 @@
+// Q#3 - When rerunning w.o 'this' in constructor.
+// Results in the 'name' field being null, so the functions return 'null' due to casting it to a string.
+
+// Q#4 - Then add 'this' to the line in 'sayHello()'
+// Same thing. Adding this tell java that you want to look at the fields associated with the class on which the method
+// is defined. 'Explicitly demands the member-level scope'
+
+// Q#5 - Whats the best naming choice?
+// I vote for the middle - Does not 'shadow' the name field. Make explicit call to the classes field. no ambiguity.
