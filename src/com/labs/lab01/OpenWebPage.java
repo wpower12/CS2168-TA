@@ -2,10 +2,13 @@ package com.labs.lab01;
 
 import java.net.*;
 import java.io.*;
+
 import java.util.Scanner;
 
 /**  This class provides a main function to read five lines of a company
  *   Web page and prints them in reverse order, given the name of a company.
+ *
+ *   Note - Line numbers will be different from the lab document due to added code and comments.
  */
 
 class OpenWebPage {
@@ -25,6 +28,12 @@ class OpenWebPage {
         inputLine = keyoabrd.readLine();
 
         // YOUR CODE HERE
+
+
+
+
+
+        // DOWN HERE 😹
         URL url = new URL(String.format("http://www.%s.com", inputLine));
         Scanner scan = new Scanner(url.openStream());
 
