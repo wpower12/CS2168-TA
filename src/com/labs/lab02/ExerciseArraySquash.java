@@ -16,7 +16,7 @@ public class ExerciseArraySquash {
      * reads [ 0 1 0 7 1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 ] after squash() completes.
      *
      **/
-
+    /*------------- START solution 1 ---------------*/ // old school C-guys write this way
     public static void squash(int[] a) {
         // YOUR SOLUTION GOES HERE
         int n = 0;            // array index at which the output value will be placed
@@ -33,7 +33,63 @@ public class ExerciseArraySquash {
         }
         while (n < a.length) a[n++] = -1;   // fills the remaining entries with -1.
     }
+    /*-------------- END solution 1 ----------------*/
 
+    /*------------- START solution 2 ---------------*/
+   public static void squash2(int[] a) {
+      int lo = 0, hi = 0;      // low and high ends of the subarray whose elements are equal
+      while (hi < a.length) {
+         a[lo] = a[hi];
+         do {
+            hi++;
+         } while ((hi < a.length) && (a[hi] == a[lo]));
+         lo++;
+      }
+      while (lo < a.length) a[lo++] = -1;   // fills the remaining entries with -1.
+   }
+    /*-------------- END solution 2 ----------------*/
+
+    /*------------- START solution 3 ---------------*/
+   public static void squash3(int[] a) {
+      int originalPos = 0;
+      int targetPos = 0;
+      while (originalPos < a.length) {
+         // Copy (and remember) one element to the correct position:
+         int currentElement = a[targetPos++] = a[originalPos++];
+         // Advance originalPos until a different element is found:
+         while (originalPos < a.length && a[originalPos] == currentElement) {
+            originalPos++;
+         }
+      }
+      // Fill remaining elements:
+      while (targetPos < a.length) {
+         a[targetPos++] = -1;
+      }
+   }
+    /*-------------- END solution 3 ----------------*/
+
+
+    /*------------- START solution 4 ---------------*/
+    // Another version of squash4(). This is a possibly a more
+    // elegant solution, but it makes a copy of the array.
+   private static void squash4(int[] a) {
+      int last = 0;
+      int lastPosition = 0;
+      int[] copy = Arrays.copyOf(a, a.length);
+
+
+      Arrays.fill(a, -1);
+      //System.out.println("copy is: " + Arrays.toString(copy));
+      //System.out.println("a now is: " + Arrays.toString(a));
+
+      for (int i = 0; i < copy.length; i++) {
+         if (i == 0 || last != copy[i]) {
+            a[lastPosition++] = copy[i];
+         }
+         last = copy[i];
+      }
+   }
+    /*-------------- END solution 4 ----------------*/
 
 
     /* main() tests your solution - do NOT modify tests you find in main(),

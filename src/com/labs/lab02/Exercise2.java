@@ -1,6 +1,8 @@
 package com.labs.lab02;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Exercise2 {
     static int[] twoSum(int[] a, int target) {
@@ -11,6 +13,50 @@ public class Exercise2 {
                     result[0] = a[i]; result[1] = a[j];
                     return result;
                 }
+        return new int[0];
+    }
+
+    /* This is a more efficient solution than the naive, but it's not
+      the most efficient. It involves sorting the array (which is
+      done by calling a library method and is assumed to take O(nlog(n))
+      time) and then examining the array entries in one pass. People are
+      not expected to come up with this solution yet, but some may.
+          [ Complexity: O(nlog(n)) time | O(1) space ]
+      */
+    static int[] twoSumBetter(int[] a, int target) {
+        int[] result = new int[2];
+        Arrays.sort(a);
+        int lo = 0;             // leftmost  index of the array
+        int hi = a.length - 1;  // rightmost index of the array
+        int sum;
+        while (lo < hi) {
+            sum = a[lo] + a[hi];
+            if (sum == target) {
+                result[0] = a[lo];
+                result[1] = a[hi];
+                return result;
+            }
+            else if (sum < target) lo += 1;
+            else if (sum > target) hi -= 1;
+        }
+        return new int[0];
+    }
+
+    /* This is a solution with the best time complexity, but it uses the
+       hash table data structure with which people are not yet familiar.
+            [ Complexity: O(n) time | O(n) space ]
+       */
+    static int[] twoSumBest(int[] a, int target) {
+        int[] result = new int[2];
+        Set<Integer> memo = new HashSet<Integer>();
+        for (int i = 0; i < a.length; i++) {
+            if ( memo.contains(target - a[i]) ) {
+                result[0] = target - a[i];
+                result[1] = a[i];
+                return result;
+            }
+            else memo.add(a[i]);
+        }
         return new int[0];
     }
 
