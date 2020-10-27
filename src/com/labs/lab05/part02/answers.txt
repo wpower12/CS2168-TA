@@ -1,0 +1,6 @@
+2.1 - "removes" the element after x from the list.
+2.2
+   .a Node x = first;
+      while(x.next != last) x = x.next;
+      x.next = null;
+   .b Allows you to do the above easily. Otherwise we'd be tracking indexes and counts.
