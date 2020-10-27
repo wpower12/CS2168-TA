@@ -23,6 +23,34 @@ public class KthFromEndRemover {
 
     }
 
+    // Slightly less straight forward method. But only one walk!
+    public static void removeKthNodeFromEnd2(LinkedList head, int k){
+        LinkedList cur = head;
+        LinkedList front = head;
+
+        for (int i = 0; i < k; i++) {
+            cur = cur.next;
+        }
+
+        // Handle the case of removing the head.
+        // We move the value from head+1 to head, and remove head+1
+        if(cur.next == null){ // Then cur is at the end of the list
+            head.value = head.next.value;
+            head.next = head.next.next;
+            return;
+        }
+
+        // The 'Normal' case - now we move the 'front' pointer till cur
+        // gets to the end. Note, cur and front are now 'k apart'
+        while(cur.next != null){
+            cur = cur.next;
+            front = front.next;
+        }
+
+        // Now we remove the kth element.
+        front.next = front.next.next;
+    }
+
     static class LinkedList {
         int value;
         LinkedList next = null;
@@ -58,7 +86,7 @@ public class KthFromEndRemover {
         System.out.println(head);
         System.out.println("removing; k=4");
 
-        removeKthNodeFromEnd(head, 4);
+        removeKthNodeFromEnd2(head, 4);
 
         System.out.println(head);
     }
