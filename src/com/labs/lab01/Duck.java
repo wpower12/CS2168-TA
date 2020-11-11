@@ -1,6 +1,6 @@
 package com.labs.lab01;
 
-public class Duck {
+public class Duck    {
     // instance variables
     private int age = 2;
     private String name;
@@ -25,7 +25,7 @@ public class Duck {
 
     // Q#1
     public String getName() {
-        return this.name;
+        return name;
     }
 
     // main() tests the Duck data type
@@ -33,7 +33,8 @@ public class Duck {
         Duck duck = new Duck("Daffy");
         System.out.println("Duck's name: "+duck.getName());  // Q#2
         duck.sayHello();  // prints "I'm Daffy"
-        duck.makeSound(); // prints "Quack!"
+        duck.makeSound(); // prints "Quack!
+
     }
 }
 

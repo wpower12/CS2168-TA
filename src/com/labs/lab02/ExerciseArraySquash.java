@@ -3,7 +3,6 @@ import java.util.Arrays;
 
 public class ExerciseArraySquash {
 
-
     /**
      * squash() takes an array of non-negative ints. On completion the array contains
      * the same numbers, but wherever the array had two or more consecutive duplicate

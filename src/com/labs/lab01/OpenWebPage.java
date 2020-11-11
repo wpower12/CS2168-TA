@@ -17,7 +17,6 @@ class OpenWebPage {
     //   the Web site corresponding to www.X.com, and prints the first five lines
     //   of the Web page in reverse order.
     public static void main(String[] arg) throws Exception {
-
         BufferedReader keyoabrd;
         String inputLine;
 
@@ -28,10 +27,6 @@ class OpenWebPage {
         inputLine = keyoabrd.readLine();
 
         // YOUR CODE HERE
-
-
-
-
 
         // DOWN HERE 😹
         URL url = new URL(String.format("http://www.%s.com", inputLine));
