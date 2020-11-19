@@ -8,7 +8,7 @@ public class TestTreeHeightCalculator {
         int height;
 
         // test case 0 (example on page 1 of instructions)
-        t.readTree("TestCases/tree.txt");
+        t.readTree("inputs/TestCases/tree.txt");
         height = t.computeHeight();
         System.out.println(height);
 
@@ -29,7 +29,7 @@ public class TestTreeHeightCalculator {
 
     public void run() throws IOException {
         TreeHeightCalculator tree = new TreeHeightCalculator();
-        tree.readTree("TestCases/treeBig.txt");
+        tree.readTree("inputs/TestCases/treeBig.txt");
         System.out.println(tree.computeHeight());
     }
 }

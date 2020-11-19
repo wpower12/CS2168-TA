@@ -14,7 +14,7 @@ public class TwoSumFast {
     }
 
     public static void main(String[] args) {
-        In in = new In("8Kints.txt");
+        In in = new In("inputs/8Kints.txt");
         int[] a = in.readAllInts();
         System.out.println("Count is: " + count(a));
     }

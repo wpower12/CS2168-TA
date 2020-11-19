@@ -54,22 +54,22 @@ public class TreeHeightCalculator {
         int height;
 
         // test case 0 (example on page 1 of instructions)
-        t.readTree("TestCases/tree.txt");
+        t.readTree("inputs/TestCases/tree.txt");
         height = t.computeHeight();
         System.out.println(height);
 
         // test case 1 (the tree from sample run 1 of the instructions)
-        t.readTree("TestCases/tree1.txt");
+        t.readTree("inputs/TestCases/tree1.txt");
         height = t.computeHeight();
         System.out.println(height);
 
         // test case 2 (the tree from sample run 2 of the instructions)
-        t.readTree("TestCases/tree2.txt");
+        t.readTree("inputs/TestCases/tree2.txt");
         height = t.computeHeight();
         System.out.println(height);
 
         // test case 3
-        t.readTree("TestCases/tree3.txt");
+        t.readTree("inputs/TestCases/tree3.txt");
         height = t.computeHeight();
         System.out.println(height);
     }

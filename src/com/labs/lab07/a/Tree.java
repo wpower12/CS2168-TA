@@ -25,6 +25,7 @@ class TreeNode  <T extends Comparable<T>> {
             else // continue traversing left subtree recursively
                 leftNode.insert(insertValue);
         }
+
         // insert in right subtree
         else if (insertValue.compareTo(data) > 0) {
             // insert new TreeNode

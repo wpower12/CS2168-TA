@@ -18,7 +18,7 @@ public class ThreeSumFast {
     }
 
     public static void main(String[] args) {
-        In in = new In("8Kints.txt"); //In in = new In("1Mints.txt");
+        In in = new In("inputs/8Kints.txt"); //In in = new In("1Mints.txt");
         int[] a = in.readAllInts();
 
         //System.out.println("The original array of ints: " + Arrays.toString(a));
